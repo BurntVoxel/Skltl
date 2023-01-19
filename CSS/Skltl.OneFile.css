@@ -1,0 +1,499 @@
+/* This CSS was originally composed of several files broken into imports. Here it is compiled into one file instead. */ 
+/* Importing Themes/Default.css*/
+/* Fonts */
+:root {
+	--serif: Cambria, Cochin, Georgia, Times, "Times New Roman", "Roboto Serif", serif;
+	--sans: "Segoe UI", Tahoma, Geneva, Verdana, Roboto, sans-serif;
+	--mono: "Courier New", Courier, "Roboto Mono", monospace;
+}
+
+
+/* Note: Primary and secondary colors must be broken into sub-components for calculations to work. */
+/* Day theme */
+:root {
+	--bg: 	0,	0%, 	100%;
+	--fg: 	0,	0%, 	0%;
+	--p: 		204,100%, 40%;
+	--s: 		204,100%, 32%;
+	--back:	hsl(var(--bg));
+	--fore:	hsl(var(--fg));
+	--pri: 	hsl(var(--p));
+	--sec: 	hsl(var(--s));
+	--link: 	 var(--pri);
+	--visited: var(--sec);
+}
+
+/* Night theme */
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		--bg: 0, 	 0%,   0%;
+		--fg: 0, 	 0%,   100%;
+		--p:	204, 100%, 40%;
+		--s: 	251, 48%,  41%;
+		--back: hsl(var(--bg));
+		--fore: hsl(var(--fg));
+		--pri:  hsl(var(--p));
+		--sec:  hsl(var(--s));
+		--link:    var(--pri);
+		--visited: var(--sec);
+	}
+}
+
+/* Parameters */
+:root {
+	--pad: .25em;
+}
+/* End of file Default.css*/
+
+
+/* Importing Style/Style.css*/
+/* General */
+:root {
+	background-color: var(--back);
+	color: var(--fore);
+}
+
+:not(nav) a:link {
+	color: var(--link);
+}
+
+:not(nav) a:active,
+:not(nav) a:visited {
+	color: var(--visited);
+}
+
+body {
+	font-family: var(--sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header {
+	font-family: var(--serif);
+}
+
+hr {
+	border: none;
+}
+
+hr:before {
+	content: "<<>><<>><<>><<>><<>>";
+}
+
+aside {
+	padding: 0.25em;
+}
+
+/* Page layout */
+header {
+	background: hsla(var(--p), 50%);
+}
+
+body > nav {
+	background: hsla(var(--p), 25%);
+}
+
+body > nav a {
+	padding: var(--pad);
+	border-right: 1px solid hsla(var(--p), 25%);
+}
+
+nav a:any-link {
+	color: var(--fore);
+	text-decoration: none;
+}
+
+footer {
+	font-size: 0.75rem;
+	font-family: var(--mono);
+	background-color: hsla(var(--p), 10%);
+}
+/* End of file Style.css*/
+
+
+/* Importing Blocks/Blocks.css*/
+/* Importing Main.css*/
+:root {
+	background-color: var(--back);
+	color: var(--fore);
+}
+
+body {
+	font-family: var(--sans);
+}
+
+main,
+article {
+	max-width: 40em;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header {
+	font-family: var(--serif);
+}
+
+:not(nav) a:link {
+	color: var(--link);
+}
+
+:not(nav) a:active,
+:not(nav) a:visited {
+	color: var(--visited);
+}
+
+hr {
+	border: none;
+}
+
+hr:before {
+	content: "<<>><<>><<>><<>><<>>";
+}
+/* End of file Main.css*/
+
+
+/* Importing Header.css*/
+header {
+	font-size: 2rem;
+	padding: var(--pad);
+	background: hsla(var(--p), 50%); 
+}
+
+/* End of file Header.css*/
+
+
+/* Importing Aside.css*/
+aside {
+	min-width: 10em;
+	padding: var(--pad);
+	background-color: hsl(var(--fg), 3%);
+}
+
+aside nav a {
+	display: block;
+}
+/* End of file Aside.css*/
+
+
+/* Importing Footer.css*/
+footer {
+	min-height: 3em;
+	padding: var(--pad);
+	text-align: center;
+	font-size: 0.75rem;
+	font-family: var(--mono);
+	background-color: hsla(var(--p), 10%);
+}
+/* End of file Footer.css*/
+
+
+/* Importing Nav.css*/
+body > nav {
+  background: hsla(var(--p), 25%);
+  margin: 0;
+  padding: 0;
+}
+
+body > nav a:any-link,
+body > nav label,
+body > nav ul li {
+  padding: 0 var(--pad);
+  margin: var(--pad) 0;
+  border-right: 1px solid hsla(var(--p), 25%);
+  color: var(--fore);
+  text-decoration: none;
+  display: inline;
+}
+
+body > nav ul {
+  list-style-type: none;
+  border-top: 1px solid hsla(var(--p), 25%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+/* End of file Nav.css*/
+
+
+
+
+/* Grid definition for wide screens*/
+@media screen and (min-width: 40em) {
+	body {
+		display: grid;
+		grid-template-columns: min-content auto min-content;
+		grid-template-rows: min-content min-content auto min-content;
+	}
+
+	header {
+		grid-column: 1 / -1;
+		grid-row: 1;
+	}
+
+	body > nav {
+		grid-column: 1/-1;
+		grid-row: 2;
+	}
+
+	aside:first-of-type {
+		grid-column: 1;
+		grid-row: 3;
+	}
+
+	main,
+	article {
+		grid-column: 2;
+		grid-row: 3;
+	}
+
+	aside:last-of-type:not(:only-of-type) {
+		grid-column: 3;
+		grid-row: 3;
+	}
+
+	footer {
+		grid-column: 1/-1;
+		grid-row: 4;
+	}
+}
+
+/* Grid definition for slim screens */
+@media screen and (max-width:40em) {
+	body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	header {
+		flex-shrink: 0;
+	}
+
+	aside,
+	nav {
+		width: 100%;
+		flex-shrink: 0;
+	}
+
+	nav {
+		display: flex;
+		flex-flow: column;
+	}
+
+	nav a {
+		display: block;
+		width: 100%;
+		padding: 0.5em 0;
+	}
+
+	main,
+	article {
+		margin-bottom: auto;
+		flex-shrink: 0;
+	}
+
+	footer {
+		flex-shrink: 0;
+	}
+}
+/* End of file Blocks.css*/
+
+
+/* Importing Functionality/Functionality.css*/
+/* Importing Tab2Skip.css*/
+/* 
+Tab2Skip. Paste this to the beginning of the document if you want to use this.
+<a href="#" id="Tab2Skip">Skip to content</a> 
+*/
+#Tab2Skip {
+	position: absolute;
+	top: -2em;
+	left: 0;
+	background: var(--back);
+	padding: .25em;
+}
+
+#Tab2Skip:focus {
+	top: 0;
+}
+/* End of file Tab2Skip.css*/
+
+
+/* Importing ToggleHide.css*/
+/* Toggle-hide button.  */
+.ToggleHide:not(:checked) + .Hide,
+.ToggleHide {
+	display: none;
+}
+
+/* USAGE EXAMPLE: Nav menu
+	<label for="NavMenuToggle"> ≡ Clicky button </label>
+	...
+	<input type="checkbox" id="NavMenuToggle" class="ToggleHide" checked />
+	<nav class="Hide">
+		<a href="About.html">About</a>
+	</nav>
+*/
+
+/* USAGE EXAMPLE: Multiple menus
+	<label for="X"> X </label>
+	<label for="Y"> Y </label>
+
+	<input id="X" class="TabPick" type="radio" name="Menu">
+	<ul class="Hide">
+		<li> Foo </li>
+		<li> Bar </li>
+	</ul>
+
+	<input  id="Y" class="TabPick" type="radio" name="Menu">
+	<ul class="Hide">
+		<li> Fizz </li>
+		<li> Buzz </li>
+	</ul>
+*/
+/* End of file ToggleHide.css*/
+
+
+
+/* End of file Functionality.css*/
+
+
+/* Importing Elements/Elements.css*/
+/* Importing Custom/CustomElements.css*/
+/* Importing Calendar.css*/
+#calendar td {
+	cursor: pointer;
+}
+
+#calendar .LastMonth,
+#calendar .NextMonth {
+	opacity: 50%;
+}
+
+#calendar td.Today {
+	background: hsl(var(--s), 50%);
+}
+
+#calendar td.Active {
+	border: thin solid white;
+	box-sizing: border-box;
+}
+/* End of file Calendar.css*/
+
+
+
+code.tag:before {
+	content: "<";
+}
+
+code.tag:after {
+	content: ">";
+}
+/* End of file CustomElements.css*/
+
+
+/* Importing Inputs.css*/
+button,
+input,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	accent-color: var(--pri);
+	background: var(--bg);
+	border: 1px solid hsl(var(--fg), 50%);
+	color: var(--fg);
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+input:not([type="checkbox"]),
+input:not([type="radio"]) {
+	width: 150px;
+
+}
+/* End of file Inputs.css*/
+
+
+/* Importing Table.css*/
+Table {
+	margin: auto;
+	text-align: center;
+	font-family: var(--mono);
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 0.5em;
+	border: 1px solid var(--back);
+}
+
+th {
+	font-weight: bold;
+	background: hsl(var(--s), 50%);
+}
+/* End of file Table.css*/
+
+
+
+blockquote,
+figure,
+details {
+	padding-top: 20px 0;
+	width: 95%;
+	margin: 1em auto;
+	box-shadow:
+		inset 0 -3em 3em hsla(var(--fg), 0.1),
+		0 0 0 2px hsla(var(--fg), 0.1),
+		0.3em 0.3em .5em hsla(var(--fg), 0.2);
+}
+
+details summary,
+label {
+	cursor: pointer;
+}
+/* End of file Elements.css*/
+
+
+/* Importing BugStomp.css*/
+html,
+body {
+	margin: 0;
+	min-width: 100%;
+	height: 100vh;
+}
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+i svg,
+span svg,
+p svg {
+	fill: currentColor;
+	width: 1em;
+	height: 1em;
+	position: relative;
+	top: .2em;
+}
+/* End of file BugStomp.css*/
+
+
+
+/* End of file Skltl.css*/
+
+

@@ -1,0 +1,31 @@
+/* Toggle-hide button.  */
+.ToggleHide:not(:checked) + .Hide,
+.ToggleHide {
+	display: none;
+}
+
+/* USAGE EXAMPLE: Nav menu
+	<label for="NavMenuToggle"> ≡ Clicky button </label>
+	...
+	<input type="checkbox" id="NavMenuToggle" class="ToggleHide" checked />
+	<nav class="Hide">
+		<a href="About.html">About</a>
+	</nav>
+*/
+
+/* USAGE EXAMPLE: Multiple menus
+	<label for="X"> X </label>
+	<label for="Y"> Y </label>
+
+	<input id="X" class="TabPick" type="radio" name="Menu">
+	<ul class="Hide">
+		<li> Foo </li>
+		<li> Bar </li>
+	</ul>
+
+	<input  id="Y" class="TabPick" type="radio" name="Menu">
+	<ul class="Hide">
+		<li> Fizz </li>
+		<li> Buzz </li>
+	</ul>
+*/

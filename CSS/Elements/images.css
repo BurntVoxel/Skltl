@@ -1,0 +1,9 @@
+i svg,      i img, 
+span svg,   span img,
+p svg,      p img,
+header svg, header img{
+	fill: currentColor;
+	height: 1em;
+	position: relative;
+	top: .2em;
+}

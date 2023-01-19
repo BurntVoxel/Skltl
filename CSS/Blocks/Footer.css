@@ -1,0 +1,8 @@
+footer {
+	min-height: 3em;
+	padding: var(--pad);
+	text-align: center;
+	font-size: 0.75rem;
+	font-family: var(--mono);
+	background-color: hsla(var(--p), 10%);
+}

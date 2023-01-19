@@ -1,0 +1,24 @@
+body > nav {
+  background: hsla(var(--p), 25%);
+  margin: 0;
+  padding: 0;
+}
+
+body > nav a:any-link,
+body > nav label,
+body > nav ul li {
+  padding: 0 var(--pad);
+  margin: var(--pad) 0;
+  border-right: 1px solid hsla(var(--p), 25%);
+  color: var(--fore);
+  text-decoration: none;
+  display: inline;
+}
+
+body > nav ul {
+  list-style-type: none;
+  border-top: 1px solid hsla(var(--p), 25%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
