@@ -1,5 +1,4 @@
 header {
 	font-size: 2rem;
 	padding: var(--pad);
-	background: hsla(var(--p), 50%); 
 }
