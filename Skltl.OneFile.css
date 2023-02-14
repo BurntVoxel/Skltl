@@ -64,7 +64,7 @@
   :root {
   	--pad: .5rem;
   	--thinLine: .1rem solid;
-  	--reader-width: 40em;
+  	--reader-width: 50em;
   }
   
   /* General */
@@ -98,6 +98,30 @@
   header {
   	font-family: var(--serif);
   }
+  
+  :is(h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6):not(:first-child){margin: 1em 0 0 0;
+  }
+  :is(h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6):first-child{
+  	margin:0;
+  }
+  
+  h1 { font-size: 3.4rem;}
+  h2 { font-size: 3.0rem;}
+  h3 { font-size: 2.6rem;}
+  h4 { font-size: 2.2rem;}
+  h5 { font-size: 1.8rem;}
+  h6 { font-size: 1.4rem;}
+  
   
   hr {
   	border: none;
@@ -147,9 +171,19 @@
   article{
   	max-width: var(--reader-width);
   }
+  article li, p li{
+  	padding: var(--pad) 0;
+  }
+  article ul, article ol, p ul, p ol{
+  	padding: 0 1em;
+  	margin: 0;
+  }
+  
+  footer, small {
+  	font-size: 0.75rem;
+  }
   
   footer {
-  	font-size: 0.75rem;
   	font-family: var(--mono);
   	background: var(--pri-thin);
   	font-size: 0.75rem;
@@ -157,80 +191,19 @@
   	text-align:center;
   	border-top: var(--thinLine) var(--pri-thin);
   }
+  footer p{
+  	text-align: left;	
+  	max-width: var(--reader-width);
+  	margin-left: auto;
+  	margin-right: auto;
+  }
 
 /*# End of file Fancy.css #*/
 
-
-/*# Importing file Modules/BugStomp.css #*/
-  html,
-  body {
-  	margin: 0;
-  	min-width: 100%;
-  	height: 100vh;
-  }
+/*# Importing file Layouts/Default.css #*/
   
-  *,
-  ::before,
-  ::after {
-  	box-sizing: border-box;
-  }
-/*# End of file BugStomp.css #*/
-
-
-/*# Importing file Modules/Blocks/All.css #*/
-
-  /*# Importing file Main.css #*/
-    main, article{
-    	width: 100%;
-    	margin-left: auto;
-    	margin-right: auto;
-    	padding: var(--pad);
-    }
-
-  /*# End of file Main.css #*/
-
-  /*# Importing file Header.css #*/
-    header {
-    	font-size: 2rem;
-    	padding: var(--pad);
-    }
-
-  /*# End of file Header.css #*/
-
-  /*# Importing file Aside.css #*/
-    aside {
-    	min-width: 10em;
-    	padding: var(--pad);
-    	background-color: hsl(var(--fg), 3%);
-    }
-    
-    aside nav a {
-    	display: block;
-    }
-  /*# End of file Aside.css #*/
-
-  /*# Importing file Footer.css #*/
-
-  /*# End of file Footer.css #*/
-
-  /*# Importing file Nav.css #*/
-    body > nav a:any-link,
-    body > nav label,
-    body > nav ul li {
-      display: inline;
-    }
-    
-    body > nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-    }
-  /*# End of file Nav.css #*/
-  
-  
-  /* Grid definition for wide screens*/
-  @media screen and (min-width: 40em) {
+  /* Grid for wide screens*/
+  @media screen and (min-width: 50em) {
   	body {
   		display: grid;
   		grid-template-columns: min-content auto min-content;
@@ -269,8 +242,8 @@
   	}
   }
   
-  /* Grid definition for slim screens */
-  @media screen and (max-width:40em) {
+  /* Flexbox for slim screens */
+  @media screen and (max-width:50em) {
   	body {
   		display: flex;
   		flex-direction: column;
@@ -307,6 +280,80 @@
   		flex-shrink: 0;
   	}
   }
+
+/*# End of file Default.css #*/
+
+
+/*# Importing file Modules/BugStomp.css #*/
+  html,
+  body {
+  	margin: 0;
+  	min-width: 100%;
+  	height: 100vh;
+  }
+  
+  *,
+  ::before,
+  ::after {
+  	box-sizing: border-box;
+  }
+
+/*# End of file BugStomp.css #*/
+
+
+/*# Importing file Modules/Blocks/All.css #*/
+
+  /*# Importing file Main.css #*/
+    main, article{
+    	width: 100%;
+    	margin-left: auto;
+    	margin-right: auto;
+    	padding: var(--pad);
+    }
+
+  /*# End of file Main.css #*/
+
+  /*# Importing file Header.css #*/
+    header {
+    	font-size: 2rem;
+    	padding: var(--pad);
+    }
+
+  /*# End of file Header.css #*/
+
+  /*# Importing file Aside.css #*/
+    aside {
+    	min-width: 10em;
+    	padding: var(--pad);
+    	background-color: hsl(var(--fg), 3%);
+    }
+    
+    aside nav a {
+    	display: block;
+    }
+
+  /*# End of file Aside.css #*/
+
+  /*# Importing file Footer.css #*/
+
+  /*# End of file Footer.css #*/
+
+  /*# Importing file Nav.css #*/
+    body > nav a:any-link,
+    body > nav label,
+    body > nav ul li {
+      display: inline;
+    }
+    
+    body > nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+  /*# End of file Nav.css #*/
+
 /*# End of file All.css #*/
 
 /*# Importing file Modules/Functionality/All.css #*/
@@ -327,6 +374,7 @@
     #Tab2Skip:focus {
     	top: 0;
     }
+
   /*# End of file Tab2Skip.css #*/
 
   /*# Importing file ToggleHide.css #*/
@@ -361,6 +409,7 @@
     		<li> Buzz </li>
     	</ul>
     */
+
   /*# End of file ToggleHide.css #*/
 
 /*# End of file All.css #*/
@@ -387,6 +436,7 @@
       	border: thin solid white;
       	box-sizing: border-box;
       }
+
     /*# End of file Calendar.css #*/
     
     code.tag:before {
@@ -396,6 +446,7 @@
     code.tag:after {
     	content: ">";
     }
+
   /*# End of file CustomElements.css #*/
 
   /*# Importing file Inputs.css #*/
@@ -439,18 +490,28 @@
     	font-weight: bold;
     	background: hsl(var(--s), 50%);
     }
+
   /*# End of file Table.css #*/
 
   /*# Importing file images.css #*/
-    i svg,      i img, 
-    span svg,   span img,
-    p svg,      p img,
-    header svg, header img{
-    	fill: currentColor;
+    /* Icon-ifying images within text */
+    :is(i, span, p, header) :is(svg, img){
+    	/* 1. Make it the size of an emoji */
     	height: 1em;
+    	/* 2. Nudge it down a hair, baseline is weirdly high. */
     	position: relative;
     	top: .2em;
+    	/* 3. Set SVG ink to text's color, unless specified. */
+    	fill: currentColor;
     }
+    
+    /* Otherwise, images should be block-ified. */
+    
+    :is(figure, div, section) :is(img, svg){
+    	display:block;
+    	max-width:var(--reader-width);
+    }
+
   /*# End of file images.css #*/
   
   blockquote,
@@ -469,6 +530,7 @@
   label {
   	cursor: pointer;
   }
+
 /*# End of file All.css #*/
 
 /*# End of file Skltl.css #*/
