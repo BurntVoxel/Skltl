@@ -13,7 +13,7 @@ Trying to define the principles of what Skltl is would take more time than reimp
 - Minimal starting knowledge: This thing uses as few custom classes and IDs as possible. You can just plunk this CSS on any clean semantic HTML and it should look just fine.
 - Hackable: If it isn't obvious where to find the variable to tweak this property or that, I haven't done my job right.
 - Skinnable: Variables are awesome. It's super easy to redo the theme for a website only a few tweaks.
-- Extensible: Any code I decide I'll reuse a lot is easy to just slot in. `@import` just might be the most useful CSS feature ever, unless someone patches in color mixing soon. *cough cough `background="rgb(var(--back),50%);` cough*
+- Extensible: Any code I decide I'll reuse a lot is easy to just slot in. `@import` just might be the most useful CSS feature ever, unless someone patches in color mixing soon. ~~*cough cough `background="rgb(var(--back),50%);` cough*~~
 
 ## Features
 
