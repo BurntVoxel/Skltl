@@ -1,0 +1,17 @@
+/* Icon-ifying images within text */
+:is(i, span, p, header) :is(svg, img){
+	/* 1. Make it the size of an emoji */
+	height: 1em;
+	/* 2. Nudge it down a hair, baseline is weirdly high. */
+	position: relative;
+	top: .2em;
+	/* 3. Set SVG ink to text's color, unless specified. */
+	fill: currentColor;
+}
+
+/* Otherwise, images should be block-ified. */
+
+:is(figure, div, section) :is(img, svg){
+	display:block;
+	max-width:var(--reader-width);
+}
