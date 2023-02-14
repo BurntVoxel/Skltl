@@ -87,6 +87,12 @@ h4, h5, h6,
 header {
 	font-family: var(--serif);
 }
+h1 { font-size: 3.4rem;}
+h2 { font-size: 3.0rem;}
+h3 { font-size: 2.6rem;}
+h4 { font-size: 2.2rem;}
+h5 { font-size: 1.8rem;}
+h6 { font-size: 1.4rem;}
 
 aside {
 	padding: 0.25em;
@@ -125,9 +131,18 @@ nav a:any-link {
 article{
 	max-width: var(--reader-width);
 }
+article li, p li{
+	padding: var(--pad) 0;
+}
+article ul, article ol, p ul, p ol{
+	padding: 0 1em;
+}
 
 footer {
 	font-size: 0.75rem;
 	border-top: var(--thinLine) var(--sec-thin);
 	padding: var(--pad);
+}
+footer p{
+	text-align: left;	
 }

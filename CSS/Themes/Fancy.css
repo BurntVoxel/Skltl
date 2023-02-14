@@ -59,7 +59,7 @@
 :root {
 	--pad: .5rem;
 	--thinLine: .1rem solid;
-	--reader-width: 40em;
+	--reader-width: 50em;
 }
 
 /* General */
@@ -93,6 +93,30 @@ h6,
 header {
 	font-family: var(--serif);
 }
+
+:is(h1,
+h2,
+h3,
+h4,
+h5,
+h6):not(:first-child){margin: 1em 0 0 0;
+}
+:is(h1,
+h2,
+h3,
+h4,
+h5,
+h6):first-child{
+	margin:0;
+}
+
+h1 { font-size: 3.4rem;}
+h2 { font-size: 3.0rem;}
+h3 { font-size: 2.6rem;}
+h4 { font-size: 2.2rem;}
+h5 { font-size: 1.8rem;}
+h6 { font-size: 1.4rem;}
+
 
 hr {
 	border: none;
@@ -142,13 +166,29 @@ body > aside{
 article{
 	max-width: var(--reader-width);
 }
+article li, p li{
+	padding: var(--pad) 0;
+}
+article ul, article ol, p ul, p ol{
+	padding: 0 1em;
+	margin: 0;
+}
+
+footer, small {
+	font-size: 0.75rem;
+}
 
 footer {
-	font-size: 0.75rem;
 	font-family: var(--mono);
 	background: var(--pri-thin);
 	font-size: 0.75rem;
 	padding: var(--pad);
 	text-align:center;
 	border-top: var(--thinLine) var(--pri-thin);
+}
+footer p{
+	text-align: left;	
+	max-width: var(--reader-width);
+	margin-left: auto;
+	margin-right: auto;
 }
