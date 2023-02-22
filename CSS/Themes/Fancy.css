@@ -84,30 +84,9 @@ body {
 	font-family: var(--sans);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+h1, h2, h3, h4, h5, h6, 
 header {
 	font-family: var(--serif);
-}
-
-:is(h1,
-h2,
-h3,
-h4,
-h5,
-h6):not(:first-child){margin: 1em 0 0 0;
-}
-:is(h1,
-h2,
-h3,
-h4,
-h5,
-h6):first-child{
-	margin:0;
 }
 
 h1 { font-size: 3.4rem;}
@@ -117,20 +96,6 @@ h4 { font-size: 2.2rem;}
 h5 { font-size: 1.8rem;}
 h6 { font-size: 1.4rem;}
 
-
-hr {
-	border: none;
-}
-
-hr:before {
-	content: "<<>><<>><<>><<>><<>>";
-}
-
-aside {
-	padding: 0.25em;
-}
-
-/* Page layout */
 header {
 	background:var(--pri-thick);
 }
@@ -145,12 +110,9 @@ body > nav {
 	border-right: var(--thinLine) var(--pri-thin);
 }
 
-body > nav a {
+body > nav a + a {
 	border-left: var(--thinLine) var(--pri-thin);
 	padding: var(--pad);
-}
-body > nav a:last-child {
-	border-right: var(--thinLine) var(--pri-thin);
 }
 
 nav a:any-link {
@@ -161,6 +123,9 @@ nav a:any-link {
 body > aside{
 	background: var(--fore-thin);
 	border: var(--thinLine) var(--fore-thin);
+}
+aside {
+	padding: 0.25em;
 }
 
 article{
@@ -174,10 +139,12 @@ article ul, article ol, p ul, p ol{
 	margin: 0;
 }
 
+hr { border: none; }
+hr:before { content: "<<>><<>><<>><<>><<>>"; }
+
 footer, small {
 	font-size: 0.75rem;
 }
-
 footer {
 	font-family: var(--mono);
 	background: var(--pri-thin);
